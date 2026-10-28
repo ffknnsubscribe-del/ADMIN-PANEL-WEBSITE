@@ -1,4 +1,4 @@
-const $ = (s) => document.querySelector(s);
+aconst $ = (s) => document.querySelector(s);
 let me = null;
 let currentPage = new URLSearchParams(location.search).get("page") || "";
 const money = (paise) => new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR" }).format(Number(paise || 0) / 100);
