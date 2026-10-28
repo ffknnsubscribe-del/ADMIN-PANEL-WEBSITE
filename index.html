@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b12">
+  <title>NeonKey — Digital Store</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">NEON<span>KEY</span></a><nav><a href="#store">Store</a><a href="#orders" id="ordersNav" hidden>My orders</a><a href="/?page=admin" id="adminNav" hidden>Admin</a></nav><div class="nav-actions"><span id="userLabel"></span><button id="logoutBtn" class="btn ghost" hidden>Logout</button><a id="loginLink" class="btn ghost" href="/?page=login">Login</a></div></header>
+<main>
+<section class="hero"><div class="eyebrow">DIGITAL GOODS • RESELLER STORE</div><h1>Power up your<br><span>digital business.</span></h1><p>Browse digital products, place orders, and track delivery from one secure account.</p><a class="btn primary" href="#store">Explore products <span>↗</span></a><div class="hero-glow"></div></section>
+<section id="auth" class="panel auth-panel" hidden><div class="section-head"><div><div class="eyebrow">YOUR ACCOUNT</div><h2 id="authTitle">Welcome back</h2></div></div><form id="authForm"><label>Email<input type="email" name="email" autocomplete="email" required maxlength="254"></label><label>Password<input type="password" name="password" autocomplete="current-password" minlength="10" required maxlength="128"></label><button class="btn primary" id="authSubmit">Sign in</button></form><p class="muted" id="authSwitch"></p><p class="notice" id="authMessage" role="status"></p></section>
+<section id="store"><div class="section-head"><div><div class="eyebrow">THE CATALOG</div><h2>Featured products</h2></div><p class="muted">Secure account • Order tracking</p></div><div id="products" class="product-grid"><div class="panel">Loading products…</div></div></section>
+<section id="orders" hidden><div class="section-head"><div><div class="eyebrow">ACCOUNT</div><h2>Your orders</h2></div><button class="btn ghost" id="refreshOrders">Refresh</button></div><div id="myOrders" class="stack"></div></section>
+<section id="admin" hidden><div class="section-head"><div><div class="eyebrow">CONTROL ROOM</div><h2>Admin panel</h2></div><button class="btn ghost" id="refreshAdmin">Refresh data</button></div><div id="stats" class="stats"></div>
+<div class="admin-grid"><div class="panel"><h3>Add product</h3><form id="productForm"><label>Product name<input name="name" required maxlength="100"></label><label>Description<textarea name="description" rows="3" maxlength="1000"></textarea></label><label>Price (₹)<input name="price" type="number" min="0" max="10000000" step="0.01" required></label><button class="btn primary">Add product</button></form><p id="productMessage" class="notice" role="status"></p><h3>Products</h3><div id="adminProducts" class="stack"></div></div>
+<div class="panel"><h3>Manage orders</h3><p class="muted small">Mark payments only after verifying them. Put digital delivery details in the delivery note.</p><div id="adminOrders" class="stack"></div></div></div>
+<div class="panel"><h3>Customers</h3><div id="customers" class="stack"></div></div></section>
+<section class="info-strip"><div><span class="mini-icon">⌁</span><h3>Account protected</h3><p>Passwords are hashed and sessions are stored server-side.</p></div><div><span class="mini-icon">◇</span><h3>Order visibility</h3><p>Track payment and delivery status in your account.</p></div><div><span class="mini-icon">↗</span><h3>Admin managed</h3><p>Products, customers and orders managed in one place.</p></div></section>
+</main><footer><a class="brand" href="/">NEON<span>KEY</span></a><p>Digital store starter • Configure your support and payment details before launch.</p><p id="support"></p></footer>
+<div id="toast" class="toast" role="status"></div><script src="/app.js" defer></script></body></html>
