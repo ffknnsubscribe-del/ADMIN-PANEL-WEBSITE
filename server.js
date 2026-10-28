@@ -293,9 +293,15 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Server error. Please try again later." });
 });
 
-initDb().then(() => {
-  app.listen(PORT, "0.0.0.0", () => console.log(`NeonKey running on port ${PORT}`));
-}).catch(err => {
-  console.error("Database initialization failed:", err);
-  process.exit(1);
-});
+if (require.main === module) {
+  initDb().then(() => {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`NeonKey running on port ${PORT}`);
+    });
+  }).catch(err => {
+    console.error("Database initialization failed:", err);
+    process.exit(1);
+  });
+}
+
+module.exports = app;
